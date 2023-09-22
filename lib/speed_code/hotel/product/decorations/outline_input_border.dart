@@ -9,7 +9,7 @@ class OutlineInputBorder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlineInputBorder(
+    return const OutlineInputBorder(
         borderSide: BorderSide(color: ColorItems.paynesGreey),
         borderRadius: BorderRadius.all(Radius.circular(16)));
   }

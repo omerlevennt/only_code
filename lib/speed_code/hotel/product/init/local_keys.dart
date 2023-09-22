@@ -6,4 +6,6 @@ class LocalKeys {
   static const String hello = 'Hi';
   static const String userName = 'Udodes';
   static const String subTitle = 'Enjoy your travel';
+  static const String popular = 'Popular';
+  static const String seeAll = 'See All';
 }
