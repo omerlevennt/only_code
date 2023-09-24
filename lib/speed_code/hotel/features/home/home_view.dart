@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:only_code/speed_code/hotel/features/home/hotel_model.dart';
 import 'package:only_code/speed_code/hotel/product/widget/nav_bar/my_nav_bar.dart';
 import '../../product/init/local_keys.dart';
 import '../../product/items/color_items.dart';
@@ -31,23 +32,17 @@ class _HomeViewState extends State<HomeView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: 24,
-              ),
-              const _Header(),
-              const SizedBox(
-                height: 24,
+              const Padding(
+                padding: PagePadding.pagePaddingVerticalK16,
+                child: _Header(),
               ),
               SizedBox(
                 height: WidgetSizes.spacingXxl7,
                 child: _ButtonListViewBuilder(buttonText: buttonText),
               ),
-              const SizedBox(
-                height: 24,
-              ),
-              const _CardTile(text: LocalKeys.popular),
-              const SizedBox(
-                height: 24,
+              const Padding(
+                padding: PagePadding.pagePaddingVerticalK16,
+                child: _CardTile(text: LocalKeys.popular),
               ),
               const SizedBox(
                 height: WidgetSizes.spacingXxlL13,

@@ -19,7 +19,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       title: const _CustomListTile(),
       actionsIconTheme: const IconThemeData(
-          color: ColorItems.paynesGreey, size: IconSize.medium),
+          color: ColorItems.paynessGreey, size: IconSize.medium),
       actions: [
         IconButton(
             onPressed: () {}, icon: const Icon(Icons.notifications_outlined))
@@ -57,17 +57,23 @@ class _SearchBar extends StatelessWidget {
     return const TextField(
       keyboardType: TextInputType.text,
       textInputAction: TextInputAction.search,
-      cursorColor: ColorItems.paynesGreey,
-      decoration: InputDecoration(
-        hintText: 'Search Hotel..',
-        filled: true,
-        fillColor: ColorItems.paynesGreey,
-        prefixIcon: Icon(Icons.search),
-        prefixIconColor: ColorItems.paynesGreey,
-        border: InputBorder.none,
-      ),
+      cursorColor: ColorItems.paynessGreey,
+      decoration: CustomInputDecoration(),
     );
   }
+}
+
+@immutable
+final class CustomInputDecoration extends InputDecoration {
+  const CustomInputDecoration()
+      : super(
+          hintText: 'Search Hotel..',
+          filled: true,
+          fillColor: ColorItems.paynesGreey,
+          prefixIcon: const Icon(Icons.search),
+          prefixIconColor: ColorItems.paynessGreey,
+          border: InputBorder.none,
+        );
 }
 
 class _FilterButton extends StatelessWidget {
@@ -207,7 +213,7 @@ class _CardHeader extends StatelessWidget {
             children: [
               const Icon(
                 Icons.place,
-                color: Colors.red,
+                color: ColorItems.paynesRed,
               ),
               Text(
                 'South tang, Banten',
@@ -231,12 +237,13 @@ class _FavoriteIcon extends StatelessWidget {
       right: 10,
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(90)),
+            color: ColorItems.paynesGreey,
+            borderRadius: BorderRadius.circular(90)),
         child: IconButton(
             onPressed: () {},
             icon: const Icon(
               Icons.favorite,
-              color: Colors.red,
+              color: ColorItems.paynesRed,
             )),
       ),
     );
@@ -249,12 +256,12 @@ class _CardTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           text,
           style: Theme.of(context).textTheme.headlineSmall,
         ),
-        const Spacer(),
         TextButton(
           onPressed: () {},
           child: const Text(LocalKeys.seeAll),

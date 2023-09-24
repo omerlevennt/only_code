@@ -7,4 +7,5 @@ class PagePadding {
   static const pagePaddingK8 = EdgeInsets.only(left: 8.0);
   static const pagePaddingK16 = EdgeInsets.only(left: 16.0);
   static const pagePaddingK32 = EdgeInsets.only(left: 32.0);
+  static const pagePaddingVerticalK16 = EdgeInsets.symmetric(vertical: 16.0);
 }
