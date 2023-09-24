@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:only_code/speed_code/hotel/features/home/hotel_model.dart';
 import 'package:only_code/speed_code/hotel/product/widget/nav_bar/my_nav_bar.dart';
 import '../../product/init/local_keys.dart';
 import '../../product/items/color_items.dart';
