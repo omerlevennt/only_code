@@ -1,13 +1,17 @@
 class HotelModel {
   final String title;
   final String location;
-  final double price;
+  final int price;
 
   HotelModel(
       {required this.title, required this.location, required this.price});
 
-  List<HotelModel> hotelItems = [
+  static final List<HotelModel> hotelItems = [
     HotelModel(
         title: 'Mavar Mevati Hotel', location: 'South tang, Banten', price: 99),
+    HotelModel(
+        title: 'Mavar Mevati Hotel', location: 'South , Banten', price: 160),
+    HotelModel(
+        title: 'Mavar Mevati Hotel', location: 'Sout, Banten', price: 120),
   ];
 }

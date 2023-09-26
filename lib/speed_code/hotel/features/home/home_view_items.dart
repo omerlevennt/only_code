@@ -138,22 +138,24 @@ class _CardItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 5,
+      itemCount: HotelModel.hotelItems.length,
       padding: EdgeInsets.zero,
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.only(right: 10.0),
+        return Padding(
+          padding: const EdgeInsets.only(right: 10.0),
           child: Card(
             child: Stack(
               children: [
-                SizedBox(
+                const SizedBox(
                   child: _CardImage(imageUrl: imageUrl),
                 ),
-                _FavoriteIcon(),
+                const _FavoriteIcon(),
                 Positioned(
                   bottom: 0,
-                  child: _CardHeader(),
+                  child: _CardHeader(
+                    model: HotelModel.hotelItems[index],
+                  ),
                 )
               ],
             ),
@@ -181,7 +183,9 @@ class _CardImage extends StatelessWidget {
 }
 
 class _CardHeader extends StatelessWidget {
-  const _CardHeader();
+  const _CardHeader({required this.model});
+
+  final HotelModel model;
 
   @override
   Widget build(BuildContext context) {
@@ -195,14 +199,14 @@ class _CardHeader extends StatelessWidget {
           Row(
             children: [
               Text(
-                'Mavar Mevati Hotel',
+                model.title,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const Spacer(),
               Padding(
                 padding: const EdgeInsets.only(right: 40.0),
                 child: Text(
-                  "99/night",
+                  "${model.price}/night",
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
@@ -216,7 +220,7 @@ class _CardHeader extends StatelessWidget {
                 color: ColorItems.paynesRed,
               ),
               Text(
-                'South tang, Banten',
+                model.location,
                 style: Theme.of(context).textTheme.titleMedium,
               )
             ],

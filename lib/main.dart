@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:only_code/speed_code/lang_app/lang_app_view.dart';
+import 'package:only_code/speed_code/hotel/features/home/home_view.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,6 +11,6 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Material App',
-        home: LangAppView());
+        home: HomeView());
   }
 }
