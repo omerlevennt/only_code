@@ -38,6 +38,7 @@ dependencies:
   equatable: ^2.0.5
   dio: ^5.3.3
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
